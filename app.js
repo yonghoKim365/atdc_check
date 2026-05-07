@@ -9,7 +9,7 @@ const day = today.getDay();
 
 const date_str = year + "년 " + month + "월 " + date + "일" + "(" + week[day] + ")";
 
-document.getElementById("date").innerHTML = year + "년 " + date_str;
+document.getElementById("date").innerHTML = date_str;
 
 const listItems = document.getElementById("attend").getElementsByTagName("li");
 // console.log(listItems);
