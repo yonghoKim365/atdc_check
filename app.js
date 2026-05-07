@@ -31,7 +31,7 @@ function is_checked() {
     attend_str += " + 관장님";
   }
 
-  attend_str += "&#10;https://chanbaek7th.github.io/knsk";
+  attend_str += "&#10;https://yonghokim365.github.io/atdc_check";
 
   document.getElementById("result-area").innerHTML = attend_str;
 }
