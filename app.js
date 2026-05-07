@@ -7,7 +7,8 @@ const month = today.getMonth() + 1;
 const date = today.getDate();
 const day = today.getDay();
 
-const date_str = month + "월 " + date + "일" + "(" + week[day] + ")";
+const date_str = year + "년 " + month + "월 " + date + "일" + "(" + week[day] + ")";
+
 document.getElementById("date").innerHTML = year + "년 " + date_str;
 
 const listItems = document.getElementById("attend").getElementsByTagName("li");
