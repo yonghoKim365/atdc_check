@@ -5,6 +5,50 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>강남성균 아침반 출석현황</title>
+    <style>
+        /* 전체 리스트: 점을 없애고 왼쪽 여백을 줌 */
+        #attend {
+            list-style: none;
+            padding-left: 30px; /* 왼쪽 여백 */
+            margin-top: 20px;
+        }
+    
+        /* 각 줄 설정: 이름과 체크박스를 한 줄에 가로로 배치하고 수직 중앙 정렬 */
+        #attend li {
+            display: flex;       /* 가로 배치 */
+            align-items: center; /* ★ 수직 중앙 정렬 ★ */
+            height: 25px;        /* 줄 높이를 고정하여 안정감 부여 */
+            margin-bottom: 2px;  /* 줄 간격 */
+        }
+    
+        /* 이름 영역 설정 */
+        .name {
+            display: inline-block;
+            width: 80px;         /* 2~3글자 이름 정렬용 너비 */
+            font-size: 1.1rem;
+            line-height: normal; /* 기본 높이값 사용 */
+        }
+    
+        /* 체크박스 설정 */
+        input[type="checkbox"] {
+            /* 브라우저 기본 위치를 초기화 */
+            margin: 0;
+            padding: 0;
+            
+            /* 크기 조절 */
+            width: 18px;
+            height: 18px;
+            
+            /* 이름과 체크박스 사이 간격 */
+            margin-left: 10px;
+            
+            /* 클릭하기 편하도록 커서 변경 */
+            cursor: pointer;
+    
+            /* 미세하게 아래로 쏠리는 현상이 있다면 아래 주석을 풀고 조절하세요 */
+            position: relative; top: -3px;
+        }
+    </style>
 </head>
 <body>
     <h2 id="date">
