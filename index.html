@@ -6,15 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>강남성균 아침반 출석현황</title>
     <style>
-        /* 전체 리스트: 점을 없애고 왼쪽 여백을 줌 */
-        #attend {
+        /* 전체 리스트: 점을 없애고 왼쪽 여백을 줌 (부상자 명단에도 적용되도록 수정) */
+        #attend{
             list-style: none;
             padding-left: 30px; /* 왼쪽 여백 */
             margin-top: 20px;
         }
     
         /* 각 줄 설정: 이름과 체크박스를 한 줄에 가로로 배치하고 수직 중앙 정렬 */
-        #attend li {
+        #attend li{
             display: flex;       /* 가로 배치 */
             align-items: center; /* ★ 수직 중앙 정렬 ★ */
             height: 20px;        /* 줄 높이를 고정하여 안정감 부여 */
@@ -24,7 +24,7 @@
         /* 이름 영역 설정 */
         .name {
             display: inline-block;
-            width: 120px;         /* 2~3글자 이름 정렬용 너비 */
+            width: 200px;         /* 2~3글자 이름 정렬용 너비 */
             font-size: 1.1rem;
             line-height: normal; /* 기본 높이값 사용 */
         }
@@ -48,14 +48,25 @@
             /* 미세하게 아래로 쏠리는 현상이 있다면 아래 주석을 풀고 조절하세요 */
             position: relative; top: -2px;
         }
+
+        /* 가로 줄 스타일 (필요시 여백 조절) */
+        hr {
+            margin: 25px 0;
+            border: 0;
+            border-top: 1px solid #ccc;
+        }
+
+        /* 소제목 스타일 */
+        .sub-title {
+            padding-left: 30px;
+            margin-bottom: -10px;
+        }
     </style>
 </head>
 <body>
     <h2 id="date">
-        <!-- 날짜 영역-->
-    </h2>
+        </h2>
     <div>
-        <!-- 회원 -->
         <ul id = "attend">
             <li>
                 <span class="name">강인규</span>                
@@ -70,15 +81,15 @@
                 <input type="checkbox" name="chk_info" value="출석" onclick="is_checked()">               
             </li>
             <li>
-                <span class="name">김구용</span>                
-                <input type="checkbox" name="chk_info" value="출석" onclick="is_checked()">               
-            </li>
-            <li>
                 <span class="name">김성현</span>                
                 <input type="checkbox" name="chk_info" value="출석" onclick="is_checked()">               
             </li>
             <li>
                 <span class="name">김용호</span>               
+                <input type="checkbox" name="chk_info" value="출석" onclick="is_checked()">             
+            </li>
+            <li>
+                <span class="name">김인성</span>               
                 <input type="checkbox" name="chk_info" value="출석" onclick="is_checked()">             
             </li>
             <li>
@@ -94,11 +105,7 @@
                 <input type="checkbox" name="chk_info" value="출석" onclick="is_checked()">
             </li>
             <li>
-                <span class="name">付拓新(부척신)</span>
-                <input type="checkbox" name="chk_info" value="출석" onclick="is_checked()">
-            </li>
-            <li>
-                <span class="name">서지우</span>
+                <span class="name">付拓新(fù tuò xīn)</span>
                 <input type="checkbox" name="chk_info" value="출석" onclick="is_checked()">
             </li>
             <li>
@@ -130,12 +137,12 @@
                 <input type="checkbox" name="chk_info" value="출석" onclick="is_checked()">               
             </li>
             <li>
-                <span class="name">이인호</span>                
-                <input type="checkbox" name="chk_info" value="출석" onclick="is_checked()">                
+                <span class="name">이원석</span>                
+                <input type="checkbox" name="chk_info" value="출석" onclick="is_checked()">               
             </li>
             <li>
-                <span class="name">이종범</span>                
-                <input type="checkbox" name="chk_info" value="출석" onclick="is_checked()">                
+                <span class="name">이인호</span>                
+                <input type="checkbox" name="chk_info" value="출석" onclick="is_checked()">               
             </li>
             <li>
                 <span class="name">전유진</span>                
@@ -146,10 +153,6 @@
                 <input type="checkbox" name="chk_info" value="출석" onclick="is_checked()">               
             </li>
             <li>
-                <span class="name">조철웅</span>                
-                <input type="checkbox" name="chk_info" value="출석" onclick="is_checked()">               
-            </li>
-            <li>
                 <span class="name">한상면</span>                
                 <input type="checkbox" name="chk_info" value="출석" onclick="is_checked()">                
             </li>
@@ -157,17 +160,38 @@
                 <span class="name">황승빈</span>                
                 <input type="checkbox" name="chk_info" value="출석" onclick="is_checked()">               
             </li>
+            <li>
+                <span class="name">황희운</span>                
+                <input type="checkbox" name="chk_info" value="출석" onclick="is_checked()">               
+            </li>
+            <li class="list-section-title">
+                <span class="name">[ 휴식중 ]</span>
+                <input type="checkbox" disabled style="display: none;">
+            </li>
+            <li>
+                <span class="name">김구용</span>
+                <input type="checkbox" name="chk_info" value="부상" onclick="is_checked()">
+            </li>
+            <li>
+                <span class="name">이종범</span>                
+                <input type="checkbox" name="chk_info" value="출석" onclick="is_checked()">                
+            </li>
+            <li>
+                <span class="name">조철웅</span>
+                <input type="checkbox" name="chk_info" value="부상" onclick="is_checked()">
+            </li>
         </ul>
     </div>
     <div>
-        <!-- 관장님-->
         <ul>
             <li>
-                관장님
+                <span class="name">관장님</span>
                 <input id = "kancho" type="checkbox" name="chk_info" value="출석" onclick="is_checked()">
             </li>
         </ul>
     </div>
+
+
     <textarea id="result-area" rows="6" cols="50"></textarea>
     <div>
     <button class="copy" onclick="copy()">클립보드에 복사</button>
